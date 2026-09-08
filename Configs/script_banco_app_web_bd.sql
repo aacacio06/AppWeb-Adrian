@@ -20,11 +20,14 @@ INSERT INTO processos (
     descricao_pro,
     situacao_pro
 )
-VALUES (
+SELECT * FROM (SELECT
     'PROC-2026-001',
     '2026-01-10',
     'João da Silva',
     'Solicitação de licença',
     'Descrição do processo de exemplo.',
     'Aberto'
+) AS novo_processo
+WHERE NOT EXISTS (
+    SELECT 1 FROM processos WHERE numero_pro = 'PROC-2026-001'
 );
