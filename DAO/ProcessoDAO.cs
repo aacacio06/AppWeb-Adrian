@@ -51,12 +51,12 @@ public class ProcessoDAO
             """,
             connection);
 
-        command.Parameters.AddWithValue("@numero", processo.Numero);
+        command.Parameters.AddWithValue("@numero", processo.Numero.Trim());
         command.Parameters.AddWithValue("@data", processo.Data?.Date ?? (object)DBNull.Value);
-        command.Parameters.AddWithValue("@interessado", processo.Interessado);
-        command.Parameters.AddWithValue("@assunto", processo.Assunto);
-        command.Parameters.AddWithValue("@descricao", processo.Descricao);
-        command.Parameters.AddWithValue("@situacao", processo.Situacao);
+        command.Parameters.AddWithValue("@interessado", processo.Interessado.Trim());
+        command.Parameters.AddWithValue("@assunto", processo.Assunto.Trim());
+        command.Parameters.AddWithValue("@descricao", processo.Descricao.Trim());
+        command.Parameters.AddWithValue("@situacao", processo.Situacao.Trim());
 
         command.ExecuteNonQuery();
     }
