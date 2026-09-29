@@ -38,4 +38,26 @@ public class ProcessoDAO
 
         return processos;
     }
+
+    public void Inserir(Processo processo)
+    {
+        using var connection = _conexao.GetConnection();
+        using var command = new MySqlCommand(
+            """
+            INSERT INTO processos
+                (numero_pro, data_pro, interessado_pro, assunto_pro, descricao_pro, situacao_pro)
+            VALUES
+                (@numero, @data, @interessado, @assunto, @descricao, @situacao);
+            """,
+            connection);
+
+        command.Parameters.AddWithValue("@numero", processo.Numero);
+        command.Parameters.AddWithValue("@data", processo.Data?.Date ?? (object)DBNull.Value);
+        command.Parameters.AddWithValue("@interessado", processo.Interessado);
+        command.Parameters.AddWithValue("@assunto", processo.Assunto);
+        command.Parameters.AddWithValue("@descricao", processo.Descricao);
+        command.Parameters.AddWithValue("@situacao", processo.Situacao);
+
+        command.ExecuteNonQuery();
+    }
 }
