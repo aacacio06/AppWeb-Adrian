@@ -1,7 +1,7 @@
-CREATE DATABASE IF NOT EXISTS app_web_bd
+CREATE DATABASE IF NOT EXISTS pds_app_web
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
-USE app_web_bd;
+USE pds_app_web;
 
 CREATE TABLE IF NOT EXISTS processos (
     id_pro INT NOT NULL AUTO_INCREMENT,

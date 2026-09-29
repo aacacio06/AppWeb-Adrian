@@ -8,7 +8,7 @@ A aplicação usa MySQL com a conexão configurada em `appsettings.json`:
 
 - **Servidor:** `localhost`
 - **Porta:** `3360`
-- **Banco:** `app_web_bd`
+- **Banco:** `pds_app_web`
 - **Usuário:** `root`
 - **Senha:** `root`
 
@@ -19,10 +19,10 @@ A aplicação usa MySQL com a conexão configurada em `appsettings.json`:
 Com o servidor MySQL em execução, rode o script:
 
 ```bash
-mysql -h127.0.0.1 -P3360 -uroot -p < Configs/script_banco_app_web_bd.sql
+mysql -h127.0.0.1 -P3360 -uroot -p < Configs/script_banco_pds_app_web.sql
 ```
 
-O script cria o banco `app_web_bd`, a tabela `processos` e um registro inicial de exemplo. Ele pode ser executado novamente sem duplicar esse registro.
+O script cria o banco `pds_app_web`, a tabela `processos` e um registro inicial de exemplo. Ele pode ser executado novamente sem duplicar esse registro.
 
 ### Estrutura da tabela `processos`
 
