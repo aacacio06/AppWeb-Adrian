@@ -1,4 +1,6 @@
-CREATE DATABASE IF NOT EXISTS app_web_bd;
+CREATE DATABASE IF NOT EXISTS app_web_bd
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
 USE app_web_bd;
 
 CREATE TABLE IF NOT EXISTS processos (
@@ -10,7 +12,7 @@ CREATE TABLE IF NOT EXISTS processos (
     descricao_pro TEXT NULL,
     situacao_pro VARCHAR(50) NOT NULL,
     PRIMARY KEY (id_pro)
-);
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 INSERT INTO processos (
     numero_pro,
