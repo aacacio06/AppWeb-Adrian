@@ -94,9 +94,9 @@
             ProcessoDAO.Inserir(processo);
             NavigationManager.NavigateTo("/processos");
         }
-        catch (Exception)
+        catch (Exception exception)
         {
-            erro = "Não foi possível salvar o processo. Verifique a conexão com o banco e tente novamente.";
+            erro = $"Não foi possível salvar o processo. Detalhes: {exception.Message}";
             salvando = false;
         }
     }

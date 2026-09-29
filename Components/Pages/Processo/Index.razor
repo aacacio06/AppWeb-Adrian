@@ -64,9 +64,9 @@
         {
             processos = ProcessoDAO.Listar();
         }
-        catch (Exception)
+        catch (Exception exception)
         {
-            erro = "Não foi possível carregar os processos. Verifique a conexão com o banco de dados.";
+            erro = $"Não foi possível carregar os processos. Detalhes: {exception.Message}";
         }
     }
 }
